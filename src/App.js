@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import {useNavigate} from 'react-router-dom';
 import './App.css';
 
-function App() {
+
+export default function App() {
+  const navigate = useNavigate();
+
+  const navigateToTransportation = () => {
+    navigate('/Transportation')
+  }
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className='HomePage'>
+      Carbon Footprint Tracker!
+        <button className='HomeBtn' onClick={navigateToTransportation}>Enter Transportation Information</button>
+      </div>
+
+      <div className='Content'>
+        <tr >
+        (1) This app serves the purpose of tracking carbon emmissions
+            for an individual and producing their estimated carbon footprint.
+        </tr>
+
+        <tr>
+        (2) The app asks about various components such as transportation, food habits, housing, 
+            etc. to determine the individual's carbon footprint and displays all this data in a graph.
+        </tr>
+
+        <tr>
+        (3) The last section will provide the user with strategies and individualized recommendations to improve their carbon footprint based on their personal data.
+            It will also reiterate their lifestyle components that contribute to a better or lower carbon footprint.
+        </tr>
+      </div>
     </div>
   );
 }
-
-export default App;

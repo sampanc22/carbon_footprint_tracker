@@ -13,7 +13,6 @@ export default function SignInButton() {
   onAuthStateChanged(auth, (user) => {
       if (user) {
           setIsUserSignedIn("sign out");
-      
       }
 
       else {

@@ -1,13 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 import './style.css';
 import { addDoc, collection, serverTimestamp, getDocs, setDoc, updateDoc, doc} from 'firebase/firestore'
 import { PieChart, Pie, Tooltip } from 'recharts';
 import {db, auth} from '../firebase-config'
-import { handleNew, handleEdit } from './utils';
+import { handleNew, handleEdit, getCurrentDate} from './utils';
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
 
 
 export default function Summary() {
-
+    const [activityChanged, setActivityChanged] = useState(false);
 
     let water_cost = Number(localStorage.getItem("water_cost"))
     let gas_cost = Number(localStorage.getItem("gas_cost"))
@@ -42,9 +45,6 @@ export default function Summary() {
     let dairy_emis = (dairy_cals) * 0.00479
    
     let food_emis  = (meat_emis + grain_emis + veg_emis + dairy_emis)
-
-   
-    
     let yearly_avg = 28480
 
     let yearly_food_emi = food_emis * 365;
@@ -52,11 +52,20 @@ export default function Summary() {
     let yearly_transportation_emi = transportation_emis*365 + plane_emis;
     let yearly_total = yearly_food_emi + yearly_house_emi + yearly_transportation_emi;
 
+    let current_date = new Date().toLocaleString("en-US", { day : '2-digit'});
+    const serverStamp = firebase.firestore.Timestamp
+   
+    
+    
+
     const data = [
         { name: "Transportation", value: ((yearly_transportation_emi)/yearly_total) * 100 , fill: "#7044cb"},
         { name: "Food", value: ((yearly_food_emi)/yearly_total) * 100 , fill: "#f70063"},
         { name: "Housing", value: ((yearly_house_emi)/yearly_total) * 100, fill:"white"},
       ];
+
+    
+    
 
     return (
       <>
@@ -77,9 +86,9 @@ export default function Summary() {
         />
         <Tooltip />
       </PieChart>
+      
 
-      <button onClick={handleEdit}>HELLO</button>
-
+      <button className='Btn' hidden={(activityChanged)?true:false} onClick={handleEdit}>Submit Data</button>
       </>  
     )
 };

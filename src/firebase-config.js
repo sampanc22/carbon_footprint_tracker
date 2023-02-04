@@ -12,7 +12,6 @@ const firebaseConfig = {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
   };
 
-console.log(process.env.REACT_APP_API_KEY)
 
 const app = initializeApp(firebaseConfig);
 
@@ -21,7 +20,6 @@ export const db = getFirestore(app);
 
 const google_provider = new GoogleAuthProvider();
 
-console.log(process.env.REACT_APP_API_KEY)
   
 export const signInWithGoogle = () => {
   signInWithPopup(auth, google_provider).then((result) => {

@@ -16,7 +16,7 @@ export default function Summary() {
     let dairy_cals = Number(localStorage.getItem("dairy_cals"))
     
     // PER MONTH
-    let water_emis = water_cost * 0.085
+    let water_emis = water_cost * 0.18
     // let gas_emis = (gas_cost/60)*483.14
     let electric_emis = electric_cost * 0.818
     let house_emis = (water_emis + electric_emis)

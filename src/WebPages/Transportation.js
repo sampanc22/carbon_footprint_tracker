@@ -41,14 +41,21 @@ export default function Transportation() {
       </div>
       <div className='transportation_inputs'>
         <div className='car'>Please enter the number of miles you have driven a car (SUV or sedan) on a typical day.
-          <input className='input' onChange={getSUVChange} type='number'placeholder='0'></input>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <input onChange={getSUVChange} type='number'placeholder='0'></input>
         </div>
         <div className='public_transport'>Please enter the number of miles you have used public transport for on a typical day.
-          <input className='input' onChange={getBusChange} type='number'placeholder='0'></input>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <input onChange={getBusChange} type='number'placeholder='0'></input>
         </div>
         <div className='plane'>Please enter the number of miles you have rode a plane in a typical month.
-          <input className='input' onChange={getPlaneChange} type='number'placeholder='0'></input>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <div className='plane_box'>
+            <input onChange={getPlaneChange} type='number'placeholder='0'></input>
+
+          </div>
         </div>
+        
       </div>
       </>  
     )

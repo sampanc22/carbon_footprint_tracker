@@ -41,10 +41,10 @@ export default function Housing() {
       </div>
         <div className='housing_inputs'>
           <div className='water'>Please refer to your water bill and enter the amount of water (in gallons) used in a month. 
-            <input className='water-input-field' onChange={getWaterCost} type='number'placeholder='0'></input>
+            <input className='input' onChange={getWaterCost} type='number'placeholder='0'></input>
           </div>
           <div className='electric'>Please refer to your electric bill and enter the amount of electricity (in kWh) used in a month.
-            <input className='electric-input-field' onChange={getElectricCost} type='number'placeholder='0'></input>
+            <input className='input' onChange={getElectricCost} type='number'placeholder='0'></input>
           </div>
           {/* <div className='gas'>
               <input className='gas-input-field' onChange={getGasCost} type='number'placeholder='0'></input>

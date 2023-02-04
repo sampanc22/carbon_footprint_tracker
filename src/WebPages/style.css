@@ -58,7 +58,7 @@
   right: 0;
 }
 
-.transportation_inputs {
+.transportation_inputs, .food_inputs, .housing_inputs {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -66,6 +66,10 @@
 }
 
 .sedan, .suv, .public_transport, .plane {
+  display: inline-flex;
+}
+
+.water, .electric {
   display: inline-flex;
 }
 

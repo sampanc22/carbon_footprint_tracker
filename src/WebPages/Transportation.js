@@ -10,12 +10,6 @@ export default function Transportation() {
     const navigateToFood = () => {
         navigate('/Food')
     }
-
-    const [sedanMiles, setSedanMiles] = useState(0)
-
-    const getSedanChange = (event) => {
-        setSedanMiles(event.target.value)
-    }
   
     const [suvMiles, setSUVMiles] = useState(0)
   
@@ -35,7 +29,6 @@ export default function Transportation() {
           setPlaneMiles(event.target.value)
     }
   
-    localStorage.setItem("sedan_miles", sedanMiles)
     localStorage.setItem("suv_miles", suvMiles)
     localStorage.setItem("bus_miles", busMiles)
     localStorage.setItem("plane_miles", planeMiles)
@@ -47,16 +40,13 @@ export default function Transportation() {
         <button className='Btn' onClick={navigateToFood}>Enter Food Information</button>
       </div>
       <div className='transportation_inputs'>
-        <div className='sedan'>Please enter the number of miles you have driven a sedan on a typical day.
-          <input className='input' onChange={getSedanChange} type='number'placeholder='0'></input>
-        </div>
-        <div className='suv'>Please enter the number of miles you have driven an SUV on a typical day.
+        <div className='car'>Please enter the number of miles you have driven a car (SUV or sedan) on a typical day.
           <input className='input' onChange={getSUVChange} type='number'placeholder='0'></input>
         </div>
         <div className='public_transport'>Please enter the number of miles you have used public transport for on a typical day.
           <input className='input' onChange={getBusChange} type='number'placeholder='0'></input>
         </div>
-        <div className='plane'>Please enter the number of miles you have driven a sedan on a typical day.
+        <div className='plane'>Please enter the number of miles you have rode a plane in a typical month.
           <input className='input' onChange={getPlaneChange} type='number'placeholder='0'></input>
         </div>
       </div>

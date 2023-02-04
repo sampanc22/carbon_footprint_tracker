@@ -14,8 +14,10 @@ export default function App() {
   return (
     <div>
       <div className='HomePage'>
-      Carbon Footprint Tracker!
-        <button className='HomeBtn' onClick={navigateToTransportation}>Enter Transportation Information</button>
+        <div>Carbon Footprint Tracker!</div>
+        <div className='Auth'>
+          <SignInButton className='SignBtn'/>
+        </div>
       </div>
 
       <div className='Content'>
@@ -35,8 +37,9 @@ export default function App() {
         </tr>
       </div>
 
-      <SignInButton/>
-      
+      <div className='Lower'>
+        <button className='HomeBtn' onClick={navigateToTransportation}>Enter Transportation Information</button>
+      </div>
     </div>
   );
 }

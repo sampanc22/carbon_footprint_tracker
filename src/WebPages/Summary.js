@@ -1,8 +1,14 @@
 import React from 'react';
 import './style.css';
+import { addDoc, collection, serverTimestamp, getDocs, setDoc, updateDoc, doc} from 'firebase/firestore'
 import { PieChart, Pie, Tooltip } from 'recharts';
+import {db, auth} from '../firebase-config'
+import { handleNew, handleEdit } from './utils';
+
 
 export default function Summary() {
+
+
     let water_cost = Number(localStorage.getItem("water_cost"))
     let gas_cost = Number(localStorage.getItem("gas_cost"))
     let electric_cost = Number(localStorage.getItem("electric_cost")) 
@@ -71,6 +77,9 @@ export default function Summary() {
         />
         <Tooltip />
       </PieChart>
+
+      <button onClick={handleEdit}>HELLO</button>
+
       </>  
     )
 };

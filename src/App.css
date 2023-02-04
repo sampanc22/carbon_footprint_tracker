@@ -13,6 +13,24 @@ body {
   padding-bottom: 25px;
 }
 
+.Auth {
+  display: flex;
+  position: absolute;
+  padding-top: 2.5mm;
+  padding-right: 1ch;
+  right: 0;
+}
+
+.SignBtn {
+  display: flex;
+  justify-content: right;
+}
+
+.Lower {
+  display: flex;
+  justify-content: center;
+}
+
 .HomeBtn {
   justify-items: center;
   border-radius: 10px;

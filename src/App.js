@@ -1,5 +1,6 @@
 import {useNavigate} from 'react-router-dom';
 import './App.css';
+import SignInButton from './WebPages/SignInButton';
 
 
 export default function App() {
@@ -33,6 +34,9 @@ export default function App() {
             It will also reiterate their lifestyle components that contribute to a better or lower carbon footprint.
         </tr>
       </div>
+
+      <SignInButton/>
+      
     </div>
   );
 }
